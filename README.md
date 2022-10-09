@@ -1,4 +1,4 @@
-# cursoVueJS-fundamentos
+# Curso de Vue.js - Fundamentos
 
 Aprende los fundamentos de Vue.js, el framework progresivo. Conoce cómo funciona la reactividad dentro de Vue.js y cómo podemos usarlo para empezar a construir aplicaciones frontend con esta librería. Descubre las ventajas de Vue junto con tu profesora @nerddiana.
 
@@ -6,6 +6,8 @@ Aprende los fundamentos de Vue.js, el framework progresivo. Conoce cómo funcion
 - Aprender cómo Vue maneja los eventos
 - Descubrir el renderizado declarativo
 - Aprender cómo funciona la reactividad con Vue.js
+
+Lo que verás a continuacion son mis notas del curso, si ves errores conceptuales o de redacción no dudes en hacerme llegar tus aportes 💚
 
 # Introducción
 
