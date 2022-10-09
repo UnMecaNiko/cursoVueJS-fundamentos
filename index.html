@@ -9,7 +9,7 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-        {{text}}
+        
     </div>
     <script>
         //retorna la applicación lista, el model view
@@ -18,8 +18,8 @@
                 return{
                     text: "Hola vue"
                 };
-
-            }
+            },
+            template: `<div v-once v-text="text"><div/>`
         }).mount("#app")
         console.log(vm)
     </script>

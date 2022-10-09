@@ -23,12 +23,21 @@ Vue.js devuelve en sí una aplicación con todos los parámetros necesarios, est
 # Rederizado declarativo
 
 ## Interpolación de datos
-Se hace referencia a la form de como se trabaja con varibles dentro de los componentes.
+Se hace referencia a la forma en como se trabaja con varibles dentro de los componentes.
 
 Las llaves dobles `{{}}` se usan para agregar expresiones de javaScript
 
+Lo que generalmente más se usa es generar un template por cada aplicación.
 
+Generalmente las directivas de Vue.js empiezan con v-
 
+Usando la directiva v-once: 
+```js
+template: `<div v-once v-text="text"><div/>` 
+```
+Se puede asegurar que el texto "text" sólo se actualice una vez.
+
+La directiva `v-html` permite usar html dentro de las variables, hay que tener cuidado para que no se pueda ejecutar código a través de por ejemplo un input de usuario. No e recomienda que los ingresos en hmtl tengan que ver con ingresos de usuario.
 
 # Fuentes de información
 
