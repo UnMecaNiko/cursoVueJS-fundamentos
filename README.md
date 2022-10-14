@@ -7,7 +7,7 @@ Aprende los fundamentos de Vue.js, el framework progresivo. Conoce cómo funcion
 - Descubrir el renderizado declarativo
 - Aprender cómo funciona la reactividad con Vue.js
 
-Lo que verás a continuacion son mis notas del curso, si ves errores conceptuales o de redacción no dudes en hacerme llegar tus aportes 💚
+Lo que verás a continuacion son mis notas del curso, si ves errores conceptuales o de redacción no dudes en cotribuir con tus aportes 💚
 
 # Introducción
 
@@ -40,6 +40,36 @@ template: `<div v-once v-text="text"><div/>`
 Se puede asegurar que el texto "text" sólo se actualice una vez.
 
 La directiva `v-html` permite usar html dentro de las variables, hay que tener cuidado para que no se pueda ejecutar código a través de por ejemplo un input de usuario. No e recomienda que los ingresos en hmtl tengan que ver con ingresos de usuario.
+
+# Input de usuario
+
+Ahora, un ejemplo de un botón en un formulario usando Vue.js:
+
+```js
+const vm = Vue.createApp({
+            data(){
+                return{
+                    counter: 0
+                };
+            },
+            methods: {
+                increment(){
+                    console.log("click!")
+                    this.counter++;
+                }
+            },
+
+            template: `
+            <form v-on:submit.prevent="increment">
+                <button >{{ counter }}</button>
+            </form>
+            `
+        }).mount("#app")
+```
+En la línea después de template, donde se hace `.prevent`, se puede concatenar estos eventos como también `.stop` 
+
+
+
 
 # Fuentes de información
 
