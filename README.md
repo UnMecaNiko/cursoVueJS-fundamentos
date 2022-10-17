@@ -113,6 +113,20 @@ template: `
     <div>{{ today }}</div>
 `
 ```
+**Watcher:** Vigila el cambio de una variable, se recomiendo no involucrar procesos complejos dentro de lo llamados si no llamar a un method.
+
+Ejemplo simple:
+
+```js
+watch:{
+    text(value, old){
+        console.log("watcher!",value,old)
+    }
+},
+template: `
+    {{ text }}
+```
+
 
 
 # Fuentes de información
