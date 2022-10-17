@@ -49,6 +49,7 @@ Ahora, un ejemplo de un botón en un formulario usando Vue.js:
 const vm = Vue.createApp({
             data(){
                 return{
+                    text: ""
                     counter: 0
                 };
             },
@@ -68,6 +69,28 @@ const vm = Vue.createApp({
 ```
 En la línea después de template, donde se hace `.prevent`, se puede concatenar estos eventos como también `.stop` 
 
+Una de las principales características de Vue.js es ser reactivo.
+
+Para hablar de reactividad se puede hacer un ejemplo de un espacio de texto que imprime el contenido de una variable y que a su vez es editable para cambiar así el valor de esta:
+
+```js
+input(e){
+    this.text = e.target.value;
+}
+<p>{{ text }}</p>
+<input 
+    type="text" 
+    @input="input"
+    :value="text"  
+/>
+```
+
+Este proceso se puede simplificar con: `v-model="text"`
+
+Con el atributo `:value` podemos asignar el valor inicial de alguna variable a algún elemento, si la variable cambia este atributo también.
+
+- :, Atributos
+- @, Eventos
 
 
 

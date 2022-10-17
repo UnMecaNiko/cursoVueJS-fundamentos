@@ -16,20 +16,20 @@
         const vm = Vue.createApp({
             data(){
                 return{
-                    counter: 0
+                    text:   "Hola Vue"
+                    
                 };
             },
             methods: {
-                increment(){
-                    console.log("click!")
-                    this.counter++;
-                }
+                
             },
 
             template: `
-            <form v-on:submit.prevent="increment">
-                <button >{{ counter }}</button>
-            </form>
+                <p>{{ text }}</p>
+                <input 
+                    type="text" 
+                    v-model="text" 
+                />
             `
         }).mount("#app")
         console.log(vm)
