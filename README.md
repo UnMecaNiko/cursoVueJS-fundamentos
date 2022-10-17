@@ -92,6 +92,27 @@ Con el atributo `:value` podemos asignar el valor inicial de alguna variable a a
 - :, Atributos
 - @, Eventos
 
+# Reactividad
+
+**Propiedades Computadas:** Son reactivas, y permiten separar bloques de código del template para tener un código más limpio y más fácil de leer.
+
+Ejemplo:
+
+```js
+computed:{
+    fullName(){
+        return this.firstName +
+            " " + this.lastName
+    },
+    today(){
+        return this.now.toLocaleDateString();
+    }
+},
+template: `
+    <div>{{ fullName }}</div>
+    <div>{{ today }}</div>
+`
+```
 
 
 # Fuentes de información
