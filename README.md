@@ -127,7 +127,7 @@ template: `
     {{ text }}
 ```
 
-
+Los estilos reactivos son la forma de cambiar valores en la visualización al tiempo que se hacen cambios en la aplicación, gneralmente se combinan clases ya creadas co asignacione dinámicas con vue.
 
 # Fuentes de información
 
