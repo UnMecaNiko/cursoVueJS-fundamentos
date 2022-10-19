@@ -129,10 +129,33 @@ template: `
 
 Los estilos reactivos son la forma de cambiar valores en la visualización al tiempo que se hacen cambios en la aplicación, gneralmente se combinan clases ya creadas co asignacione dinámicas con vue.
 
+# Listas y condicionales
+
+Nos permiten hacer cambios directos en el template en función de alguna variable, en el ejemplo se comprueba la variable open para saber si ya se ha accedido a una cuenta o no:
+
+```html
+<div class="container" :class="styles">
+    <h2>{{ text }}</h2>
+    <div v-if="open">
+        <p>Hola, {{ username }}</p>
+    </div>
+    <div v-else>
+        <label>Username </label>
+        <input type="text" v-model="username" > 
+    </div>
+    <button @click="open= !open">
+        <div v-if="!open">Acceder</div>
+        <div v-else>Salir</div>
+    </button>
+</div>
+```
+
+
 # Fuentes de información
 
 - [Introduction | Vue.js](https://vuejs.org/guide/introduction.html)
 - [Conceptos Básicos de Componentes](https://es.vuejs.org/v2/guide/components.html#Ejemplo-base)
 - [Frontend a profundidad con Vue.js - Platzi](https://platzi.com/vue/)
+- [Conditional Rendering | Vue.js](https://vuejs.org/guide/essentials/conditional.html)
 - [gitignore.io](https://www.toptal.com/developers/gitignore)
 - [Basic Formatting sintax - GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
