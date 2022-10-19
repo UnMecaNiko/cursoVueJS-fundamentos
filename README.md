@@ -150,6 +150,36 @@ Nos permiten hacer cambios directos en el template en función de alguna variabl
 </div>
 ```
 
+Se usa el atributo `:key` para dar un identificador único a elementos que se generan a partir de `v-for` 
+
+Un ejemplo de `v-for`:
+
+```js
+posts: [
+{
+    title: "Titulo 1",
+    description: "Lorem pmisum..."
+},
+{
+    title: "Titulo 2",
+    description: "Lorem pmisum..."
+},
+{
+    title: "Titulo 3",
+    description: "Lorem pmisum..."
+}
+]
+```
+```html
+<div class="list">
+    <div v-for="(item,i) in posts" :key="i" class="item">
+        <div class="title">item.title</div>
+        <p>item.description</p>
+    </div>
+</div>
+```
+
+
 
 # Fuentes de información
 
