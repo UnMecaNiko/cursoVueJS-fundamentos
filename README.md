@@ -184,8 +184,11 @@ Cuando el código en el template crece mucho lo mejor es comenzar a separar todo
 
 Con la función `app.component(nombre, descripción en json)` podemos agregar componentes, aislando distintos elementos
 
-El componente raiz es el que contiene a todos los demás, el número de hijos es ilimitado y cada hijo puede tener multiples hijos.
+El componente raíz es el que contiene a todos los demás, el número de hijos es ilimitado y cada hijo puede tener múltiples hijos.
 
+**Slots - REutilización de código**
+
+Los slots nos permiten acceder a distintos espacios designados de los componentes diseñados. De esta manera se pueden colocar los estilos de forma más fácil y preocuparse sólo por el contenido. Así queda todo de una forma modular y más reutilizable.
 
 # Fuentes de información
 

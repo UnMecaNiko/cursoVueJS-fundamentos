@@ -14,79 +14,33 @@
     <script>
         //retorna la applicación lista, el model view
         const app = Vue.createApp({
-            data(){
-                return{
-                    text:   "Accede a tu cuenta",
-                    open: false,
-                    username: "",
-                    posts: [
-                    {
-                        title: "Titulo 1",
-                        description: "Lorem pmisum..."
-                    },
-                    {
-                        title: "Titulo 2",
-                        description: "Lorem pmisum..."
-                    },
-                    {
-                        title: "Titulo 3",
-                        description: "Lorem pmisum..."
-                    }
-                    ]
-                };
-            },
-            
-            watch:{
-                open(value){
-                    if (value){
-                        this.text= "Accede a tu cuenta"
-                    }
-                    else{
-                        this.text= "Cierra sesión" 
-                    }
-                }
-            },
-            computed:{
-                label(){
-                    return this.open? "Salir":"Acceder"
-                },
-                styles(){
-                    return this.open? ['open']: ['closed'];
-                }
-            },
-            template: `
-            <div class="container" :class="styles">
-                <h2>{{ text }}</h2>
-                <div v-if="open">
-                    <p>Hola, {{ username }}</p>
-                    <div class="list">
-                        <item 
-                            v-for="(item,i) in posts" 
-                            :key="i"
-                            :post="item"
-                        />
-                    </div>
+            template:`
+                <div>
+                    <v-layout>
+                        <template v-slot:header>
+                            <button>Titulo</button>
+                        </template>
+                        <template v-slot:content>
+                            <p>holaaa</p>
+                        </template>
+                    </v-layout>
                 </div>
-                <div v-else>
-                    <div>Username</div>
-                    <input type="text" v-model="username" > 
-                </div>
-                <button @click="open= !open">
-                    <div v-if="!open">Acceder</div>
-                    <div v-else>Salir</div>
-                </button>
-            </div>
             `
         })
-        app.component("item",{
-            props: ["post"],
+        app.component("v-layout",{
             template:`
-            <div class="item">
-                <div class="title">{{ post.title }}</div>
-                <p>{{ post.description }}</p>
+            <header>
+                <slot name="header">
+                </slot>    
+            </header>
+            <div>
+                <slot name="content">
+                </slot>    
             </div>
             `
-        });
+
+        } )
+          
         const vm =app.mount("#app")
         console.log(vm)
     </script>
@@ -104,31 +58,7 @@
             width: 100%;
             height: 100%;
         }
-        button {
-            margin-top: 24px;
-            border: none;
-            background-color: white;
-            padding: 8px 24px;
-            border-radius: 12px;
-            cursor: pointer;
-        }
-        .closed {
-            background-color: #eca1a6;
-        }
-        .open {
-            background-color: #b5e7a0;
-        }
-        .list{
-            display: flex;
-            flex-direction: column;
-        }
-        .item{
-            border: 1px solid black;
-        }
-        .title{
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
+       
     </style>
 </body>
 </html>
