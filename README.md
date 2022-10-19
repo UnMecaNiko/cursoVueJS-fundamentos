@@ -178,7 +178,13 @@ posts: [
     </div>
 </div>
 ```
+# Componentes personalizados
 
+Cuando el código en el template crece mucho lo mejor es comenzar a separar todo en pequeños módulos de código.
+
+Con la función `app.component(nombre, descripción en json)` podemos agregar componentes, aislando distintos elementos
+
+El componente raiz es el que contiene a todos los demás, el número de hijos es ilimitado y cada hijo puede tener multiples hijos.
 
 
 # Fuentes de información

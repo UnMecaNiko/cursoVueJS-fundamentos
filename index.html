@@ -13,7 +13,7 @@
     </div>
     <script>
         //retorna la applicación lista, el model view
-        const vm = Vue.createApp({
+        const app = Vue.createApp({
             data(){
                 return{
                     text:   "Accede a tu cuenta",
@@ -60,10 +60,11 @@
                 <div v-if="open">
                     <p>Hola, {{ username }}</p>
                     <div class="list">
-                        <div v-for="(item,i) in posts" :key="i" class="item">
-                            <div class="title">item.title</div>
-                            <p>item.description</p>
-                        </div>
+                        <item 
+                            v-for="(item,i) in posts" 
+                            :key="i"
+                            :post="item"
+                        />
                     </div>
                 </div>
                 <div v-else>
@@ -76,7 +77,17 @@
                 </button>
             </div>
             `
-        }).mount("#app")
+        })
+        app.component("item",{
+            props: ["post"],
+            template:`
+            <div class="item">
+                <div class="title">{{ post.title }}</div>
+                <p>{{ post.description }}</p>
+            </div>
+            `
+        });
+        const vm =app.mount("#app")
         console.log(vm)
     </script>
     <style>
