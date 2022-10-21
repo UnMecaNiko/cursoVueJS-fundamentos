@@ -190,6 +190,34 @@ El componente raíz es el que contiene a todos los demás, el número de hijos e
 
 Los slots nos permiten acceder a distintos espacios designados de los componentes diseñados. De esta manera se pueden colocar los estilos de forma más fácil y preocuparse sólo por el contenido. Así queda todo de una forma modular y más reutilizable.
 
+# Comunicación entre componentes
+
+La directiva `v-bind` permite utilizar variables dinámicas, reactividad de valores en tiempo real, permite cualquier tipo de dato
+
+La sintaxis de props permite enviar datos de componentes padre a componentes hijo de forma reactiva, se utiliza como una variable local que viene desde una parte externa.
+
+Es una mala práctica cambiar el valor del prop sin avisar al componente padre
+
+**Ejemplo:**
+
+```js
+app.component("v-item",{
+    props: {
+        text: {
+            default: "Texto vacío"
+        }
+    },
+    template:`
+    <li>
+        {{text}}
+    </li>
+    `
+} )
+```
+
+La sintaxis en `props` se puede simplificar a una lista, sin embargo se considera una buena práctica escribirlo como el ejemplo
+
+
 # Fuentes de información
 
 - [Introduction | Vue.js](https://vuejs.org/guide/introduction.html)

@@ -14,31 +14,30 @@
     <script>
         //retorna la applicación lista, el model view
         const app = Vue.createApp({
+            data(){
+                return{
+                    items: ["uno", "dos", "tres"]
+                }
+            },
             template:`
-                <div>
-                    <v-layout>
-                        <template v-slot:header>
-                            <button>Titulo</button>
-                        </template>
-                        <template v-slot:content>
-                            <p>holaaa</p>
-                        </template>
-                    </v-layout>
-                </div>
+                <ul>
+                    <v-item v-for="item in items" v-bind:text=item>
+                        {{ item }}
+                    </v-item>
+                </ul>
             `
         })
-        app.component("v-layout",{
+        app.component("v-item",{
+            props: {
+                text: {
+                    default: "Texto vacío"
+                }
+            },
             template:`
-            <header>
-                <slot name="header">
-                </slot>    
-            </header>
-            <div>
-                <slot name="content">
-                </slot>    
-            </div>
+            <li>
+                {{text}}
+            </li>
             `
-
         } )
           
         const vm =app.mount("#app")
