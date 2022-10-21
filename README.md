@@ -217,6 +217,41 @@ app.component("v-item",{
 
 La sintaxis en `props` se puede simplificar a una lista, sin embargo se considera una buena práctica escribirlo como el ejemplo
 
+> Recuerden: Los errores son nuestros amigos, así que, siempre podemos utilizarlos a nuestro favor 💚.
+
+- Usar `v-on` o `@` es equivalente.
+
+Para la comunicación de hijo a padre e pueden crear eventos que retornen valores y ejecuten código, en el ejemplo a continuación se crea un método en el componente hijo que es llamado al hacer click, el método dispara un evento que es escuchado desde el componente padre:
+
+```js
+//dentro de "createApp"
+template:`
+<ul>
+    <v-item 
+        v-for="(item, i) in items" 
+        v-bind:text="item"
+        @remove="remove(i)"
+    />
+</ul>
+`
+```
+```js
+ app.component("v-item",{
+props: {
+    text: String
+},
+methods:{
+    rm(){
+        this.$emit("remove");
+    }
+},
+template:`
+<li @click="rm">
+    {{ text }}
+</li>
+`
+} )
+```
 
 # Fuentes de información
 
