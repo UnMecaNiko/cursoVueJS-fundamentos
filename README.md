@@ -253,11 +253,48 @@ template:`
 } )
 ```
 
+### 🔄 v-model
+Permite una comunicacion en dos sentidos entre el padre y el hijo, se debe especificar el prop del componente y la variable involucrada: `v-model:propValue="variableValue"`
+
+ejemplo:
+```js
+app.component("v-input",{
+props: {
+    inputValue: String
+},
+methods:{
+    changeInput(e){
+        this.$emit("update:inputValue",e.target.value)
+    }
+},
+template:`
+<input
+    type="text"
+    v-bind:value="inputValue"
+    v-on:input="changeInput"
+/>
+`
+} )
+```
+Se crea un componente para ser llamado en el template principal:
+```js
+template:`
+<div>
+    <p>{{ text }}</p>
+    <v-input 
+        v-model:inputValue="text"
+    />    
+</div>
+`
+```
+Nótese cómo se usa `v-model`
+
 # Fuentes de información
 
+- [Frontend a profundidad con Vue.js - Platzi](https://platzi.com/vue/)
 - [Introduction | Vue.js](https://vuejs.org/guide/introduction.html)
 - [Conceptos Básicos de Componentes](https://es.vuejs.org/v2/guide/components.html#Ejemplo-base)
-- [Frontend a profundidad con Vue.js - Platzi](https://platzi.com/vue/)
+- [Component Events](https://vuejs.org/guide/components/events.html)
 - [Conditional Rendering | Vue.js](https://vuejs.org/guide/essentials/conditional.html)
 - [gitignore.io](https://www.toptal.com/developers/gitignore)
 - [Basic Formatting sintax - GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
