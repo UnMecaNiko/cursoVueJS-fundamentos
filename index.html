@@ -19,35 +19,31 @@
                     text: "Hola Vue"
                 }
             },
+            provide(){
+                return{
+                    otroTexto: this.text
+                }
+            },
             methods: {
             },
             template:`
-            <div>
-                <p>{{ text }}</p>
-                <v-input 
-                    v-model:inputValue="text"
-                />    
-            </div>
+            <p>Padre: {{text}}</p>
+            <v-primerHijo/>
             `
         })
-        app.component("v-input",{
-            props: {
-                inputValue: String
-            },
-            methods:{
-                changeInput(e){
-                    this.$emit("update:inputValue",e.target.value)
-                }
-            },
+        app.component("v-primerHijo",{
+            inject: ["otroTexto"],
             template:`
-            <input
-                type="text"
-                v-bind:value="inputValue"
-                v-on:input="changeInput"
-            />
+            <p>Primer hijo: {{otroTexto}}</p>
+            <v-tercer/>
             `
         } )
-          
+        app.component("v-tercer",{
+            inject: ["otroTexto"],
+            template:`
+            <div>segundo hijo: {{otroTexto}}</div>
+            `
+        } )
         const vm =app.mount("#app")
         console.log(vm)
     </script>

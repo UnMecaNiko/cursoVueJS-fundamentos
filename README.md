@@ -289,6 +289,50 @@ template:`
 ```
 Nótese cómo se usa `v-model`
 
+Un componente profundo no es hijo directamente del componente que provee los datos, es decir hay uno a más entre este y el padre principal.
+
+`provide` permite pasar variables a componentes hijo cuando estos usan `inject`
+
+Para lograr reactividad, las variables no se declaran en el apartado `provide`, se declaran en el apartado `data` y se llaman con el prefijo `this.`
+
+Ejemplo:
+
+```js
+const app = Vue.createApp({
+    data(){
+        return{
+            text: "Hola Vue"
+        }
+    },
+    provide(){
+        return{
+            otroTexto: this.text
+        }
+    },
+    m
+    template:`
+    <p>Padre: {{text}}</p>
+    <v-primerHijo/>
+    `
+})
+app.component("v-primerHijo",{
+    inject: ["otroTexto"],
+    template:`
+    <p>Primer hijo: {{otroTexto}}</p>
+    <v-tercer/>
+    `
+} )
+app.component("v-tercer",{
+    inject: ["otroTexto"],
+    template:`
+    <div>segundo hijo: {{otroTexto}}</div>
+    `
+} )
+const vm =app.mount("#app")
+console.log(vm)
+```
+
+
 # Fuentes de información
 
 - [Frontend a profundidad con Vue.js - Platzi](https://platzi.com/vue/)
