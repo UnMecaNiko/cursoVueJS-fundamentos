@@ -332,6 +332,19 @@ const vm =app.mount("#app")
 console.log(vm)
 ```
 
+# Componentes en el virtual DOM
+
+**Instancias de componentes:** Una instancia es una copia de un componente de Vue 
+
+Usando `vm.$root` devuelve el objet raiz, el ue contiene todo el árbol de componentes de la aplicación
+
+Usando `vm.$el` se accede al componente html de la aplicación
+
+Para acceder a referencias se usa `vm.$refs`. Para props, `vm.$props` de esta forma se puede interactuar con Vue y JavaScript Vanila de forma progresiva.
+
+En caso de querer usar Vue como un framework completo también es posible, esta es una de las principales ventajas.
+
+> Un proxy es un elemento reactivo
 
 # Fuentes de información
 
