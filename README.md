@@ -346,9 +346,22 @@ En caso de querer usar Vue como un framework completo también es posible, esta 
 
 > Un proxy es un elemento reactivo
 
+# Vue progresivo
+
+EN este curso hemos aprendido que Vue es una herramienta progresiva, para usarlo como framework debemos acer uso de nodeJs
+Los comandos que utilizaremos son:
+```bash
+npm install -g @vue/cli
+vue create hello-world
+npm run serve
+```
+
 # Fuentes de información
 
 - [Frontend a profundidad con Vue.js - Platzi](https://platzi.com/vue/)
+
+-[Vue CLI](https://cli.vuejs.org/)
+
 - [Introduction | Vue.js](https://vuejs.org/guide/introduction.html)
 - [Conceptos Básicos de Componentes](https://es.vuejs.org/v2/guide/components.html#Ejemplo-base)
 - [Component Events](https://vuejs.org/guide/components/events.html)
