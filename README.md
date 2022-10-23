@@ -39,7 +39,7 @@ template: `<div v-once v-text="text"><div/>`
 ```
 Se puede asegurar que el texto "text" sólo se actualice una vez.
 
-La directiva `v-html` permite usar html dentro de las variables, hay que tener cuidado para que no se pueda ejecutar código a través de por ejemplo un input de usuario. No e recomienda que los ingresos en hmtl tengan que ver con ingresos de usuario.
+La directiva `v-html` permite usar html dentro de las variables, hay que tener cuidado para que no se pueda ejecutar código a través de por ejemplo un input de usuario. No se recomienda que los ingresos en hmtl tengan que ver con ingresos de usuario.
 
 # Input de usuario
 
