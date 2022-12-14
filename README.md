@@ -359,9 +359,7 @@ npm run serve
 # Fuentes de información
 
 - [Frontend a profundidad con Vue.js - Platzi](https://platzi.com/vue/)
-
--[Vue CLI](https://cli.vuejs.org/)
-
+- [Vue CLI](https://cli.vuejs.org/)
 - [Introduction | Vue.js](https://vuejs.org/guide/introduction.html)
 - [Conceptos Básicos de Componentes](https://es.vuejs.org/v2/guide/components.html#Ejemplo-base)
 - [Component Events](https://vuejs.org/guide/components/events.html)
